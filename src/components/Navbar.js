@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import github from '../assets/img/github-icon.svg'
+import logo from '../assets/img/logo.svg'
 
 const Navbar = class extends React.Component {
 
@@ -31,49 +31,59 @@ const Navbar = class extends React.Component {
  render() {
    return (
   
-  <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item" title="Logo">
-          <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+<nav className="landing-navbar navbar navbar-expand-lg navbar-dark fixed-top pt-lg-4"role="navigation" aria-label="main-navigation">
+    <div className="container-fluid px-3">
+      <Link to="/" className="navbar-brandpy-3"> title="Logo">
+          <img src={logo} alt="Everpay" style={{ width: '128px' }} />
         </Link>
-        {/* Hamburger menu */}
-        <div className="navbar-burger burger" data-target="navMenu">
+
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#landing-navbar-collapse">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+ {/* Hamburger menu */}
+burger" data-target="navMenu">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-      <div id="navMenu" className="navbar-menu">
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-        <Link className="navbar-item" to="/contact">
-          Contact
-        </Link>
-        <Link className="navbar-item" to="/contact/examples">
-          Form Examples
-        </Link>
-      </div>
-      <div className="navbar-end has-text-centered">
+<div className="collapse navbar-collapse burger" data-target="navMenu" id="landing-navbar-collapse">
+        <div className="navbar-nav align-items-lg-center ml-lg-4">
+<Link className="anchor-link nav-item nav-link" to="#features">Features</Link>
+<Link className="nav-item nav-link" to="/pricing">Pricing</Link>
+<Link className="nav-item nav-link" to="/about">About</Link>
+<Link className="nav-item nav-link" to="/contact">Contact</Link>
+        </div>
+
+        <div className="navbar-nav align-items-lg-center ml-auto">
+
+          <div className="nav-item py-2 py-lg-0 ml-lg-4">
         <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
+          className="nav-item nav-link"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span className="icon">
-            <img src={github} alt="Github" />
+            <img src={github} alt="Support" />
           </span>
         </a>
       </div>
+          <div className="nav-item py-2 py-lg-0 ml-lg-4">
+<a className="btn btn-outline-white btn-round borderless" 
+          href="https://id.everpayinc.com/login"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Sign In</a>
+          </div>
+          <div className="nav-item py-2 py-lg-0 ml-lg-1">
+<Link className="btn btn-primary btn-round" to="https://id.everpayinc.com/signup">Sign Up</Link>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
+
   )}
 }
 
